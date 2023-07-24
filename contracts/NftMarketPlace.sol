@@ -142,7 +142,7 @@ contract NftMarketPlace is ReentrancyGuard {
     {
         Listing memory listing = s_listings[nftAddress][tokenId];
         listing.price = newPrice;
-        emit ItemUpdated(nftAddress, tokenId, newPrice);
+        emit ItemListed(msg.sender, nftAddress, tokenId, newPrice);
     }
 
     function withdrawProceeds() external {
